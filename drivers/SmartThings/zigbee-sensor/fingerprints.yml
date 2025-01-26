@@ -1,0 +1,8 @@
+zigbeeGeneric:
+  - id: "ias-generic-sensor"
+    deviceLabel: "IAS Zigbee Generic Sensor"
+    clusters:
+      server:
+        - 0x0500
+    deviceProfileName: ias-generic-sensor
+
