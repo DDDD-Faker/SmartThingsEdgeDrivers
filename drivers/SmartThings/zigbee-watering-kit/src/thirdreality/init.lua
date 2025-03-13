@@ -49,11 +49,13 @@ end
 
 local function fan_speed_handler(driver, device, command)
     set_watering_time(device, command.args.speed)
+    device:emit_event(capabilities.fanSpeed.fanSpeed(command.args.speed))--add by dzd
 end
 
 local function mode_handler(driver, device, command)
     local mode_value = tonumber(command.args.mode)
     set_watering_interval(device, mode_value)
+    device:emit_event(capabilities.mode.mode(tostring(mode_value)))--add by dzd
 end
 
 local function watering_time_handler(driver, device, value, zb_rx)
